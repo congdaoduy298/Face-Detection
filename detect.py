@@ -17,7 +17,7 @@ def cascadeFaceDetection(img_path):
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
     for (x, y, w, h) in faces:
         img = cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
-    cv2.imwrite('cascade_image.jpg', img)
+    cv2.imwrite('./images/cascade_image.jpg', img)
     return faces, img 
 
 
@@ -58,7 +58,7 @@ def faceRecognition(img_path, single=True, show=True):
         img = cv2.rectangle(img, (left, top), (right, bottom), (255, 0, 0), 2)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     # Save output image
-    cv2.imwrite('detected_image.jpg', img)
+    cv2.imwrite('./images/detected_image.jpg', img)
     return img
 
 
